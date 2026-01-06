@@ -1,0 +1,252 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  background: #0b0c10;
+  color: #e6e6e6;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.agentBtn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(124, 92, 255, 0.18);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content.oneCol {
+  display: block;
+}
+
+.content.twoCol {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+}
+
+.panel,
+.agentPanel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.agentPanel {
+  min-height: 500px;
+}
+
+.block {
+  padding: 14px 14px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.block:first-child {
+  border-top: none;
+}
+
+.block.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.label {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.chip {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+  color: #e6e6e6;
+  border-radius: 10px;
+  padding: 9px 10px;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: rgba(124, 92, 255, 0.9);
+  background: rgba(124, 92, 255, 0.22);
+}
+
+textarea {
+  width: 100%;
+  min-height: 64px;
+  resize: vertical;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #e6e6e6;
+  padding: 10px 10px;
+  outline: none;
+}
+
+select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #e6e6e6;
+  padding: 10px 10px;
+  outline: none;
+}
+
+.hint {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.7;
+  text-align: right;
+}
+
+.valueBox {
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  min-width: 44px;
+  text-align: center;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggleUi {
+  width: 48px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  position: relative;
+  transition: 120ms ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.toggleUi::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #fff;
+  transition: 120ms ease;
+}
+
+.toggle input:checked + .toggleUi {
+  background: rgba(124, 92, 255, 0.7);
+}
+
+.toggle input:checked + .toggleUi::after {
+  transform: translateX(20px);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  justify-content: space-between;
+}
+
+.primary,
+.secondary {
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  color: #fff;
+}
+
+.primary {
+  background: rgba(124, 92, 255, 0.85);
+  flex: 1;
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.error {
+  padding: 14px;
+  color: #ffb4b4;
+}
+
+.result {
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agentTitle {
+  padding: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.agentBody {
+  padding: 14px;
+  opacity: 0.85;
+}
+
+
